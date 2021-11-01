@@ -1,0 +1,46 @@
+$white: rgb(250, 250, 250);
+$grey-light: #c9c9c9;
+$grey: #b2b2b2;
+$grey-medium: #868686;
+$grey-dark: #464646;
+$grey-darker: #3a3a3a;
+$black: rgb(0, 0, 0);
+
+$blue: #53a4df;
+
+$h2-size: 3.4rem;
+
+$bp-1300: 81.25em; // 1300 / 16 = 81.25
+$bp-1000: 62.5em; // 1000 / 16 = 62.5
+$bp-850: 53.125em; // 850 / 16 = 53.125
+$bp-700: 43.75em; // 700 / 16 = 43.75
+$bp-600: 37.5em; // 600 / 16 = 37.5
+$bp-460: 28.75em; // 460 / 16 = 28.75
+$bp-400: 25em; // 400 / 16 = 25
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: $bp-1300) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-1000) {
+    font-size: 45%;
+  }
+}
+
+body {
+  background-color: $white;
+}
