@@ -62,6 +62,16 @@ function handleDeptChange(e) {
   });
 }
 
+function applyErrror(elem) {
+  // highlight name border
+  const boxParent = elem.closest(".form__box");
+  boxParent.classList.add("invalid");
+
+  // display error message
+  const errorEl = boxParent.querySelector(".form__error");
+  errorEl.classList.add("invalid");
+}
+
 function handleFormSubmit(e) {
   e.preventDefault();
 
@@ -69,61 +79,31 @@ function handleFormSubmit(e) {
 
   // check if values are valid
   if (nameInput.value.length < 2) {
-    // highlight name border
-    const boxParent = nameInput.closest(".form__box");
-    boxParent.classList.add("invalid");
-
-    // display error message
-    const errorEl = boxParent.querySelector(".form__error");
-    errorEl.classList.add("invalid");
+    applyErrror(nameInput);
 
     valid = false;
   }
 
   if (surnameInput.value.length < 2) {
-    // highlight name border
-    const boxParent = surnameInput.closest(".form__box");
-    boxParent.classList.add("invalid");
-
-    // display error message
-    const errorEl = boxParent.querySelector(".form__error");
-    errorEl.classList.add("invalid");
+    applyErrror(surnameInput);
 
     valid = false;
   }
 
   if (deptSelect.value === "0") {
-    // highlight deptSelect border
-    const boxParent = deptSelect.closest(".form__box");
-    boxParent.classList.add("invalid");
-
-    // display error message
-    const errorEl = boxParent.querySelector(".form__error");
-    errorEl.classList.add("invalid");
+    applyErrror(deptSelect);
 
     valid = false;
   }
 
   if (locSelect.value === "0") {
-    // highlight locSelect border
-    const boxParent = locSelect.closest(".form__box");
-    boxParent.classList.add("invalid");
-
-    // display error message
-    const errorEl = boxParent.querySelector(".form__error");
-    errorEl.classList.add("invalid");
+    applyErrror(locSelect);
 
     valid = false;
   }
 
   if (!validarCedula(ciInput.value)) {
-    // highlight name border
-    const boxParent = ciInput.closest(".form__box");
-    boxParent.classList.add("invalid");
-
-    // display error message
-    const errorEl = boxParent.querySelector(".form__error");
-    errorEl.classList.add("invalid");
+    applyErrror(ciInput);
 
     valid = false;
   }
